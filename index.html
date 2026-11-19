@@ -1,67 +1,222 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#101827">
-<title>Daily World Brief | Geopolitics Desk</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101d32">
+<meta name="description" content="Daily World Brief — a calm, source-led briefing on India and world affairs.">
+<title>Daily World Brief | India & World Affairs</title>
 <style>
-:root{--bg:#0d1422;--panel:#151f31;--panel2:#1b2940;--line:#2b3b55;--ink:#f1f5fb;--muted:#aebbd0;--blue:#8fc7ff;--green:#80e0c2}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#1b3150 0,#0d1422 48%);color:var(--ink);font:16px/1.5 system-ui,Segoe UI,Arial,sans-serif}
-header,main,footer{max-width:1080px;margin:auto;padding-left:20px;padding-right:20px}
-header{padding-top:32px;padding-bottom:22px}.eyebrow{color:var(--green);font-weight:700;text-transform:uppercase;letter-spacing:.15em;font-size:.75rem}
-h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.05;margin:8px 0}.intro{max-width:720px;color:var(--muted);margin:12px 0}
-.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:18px}.bar input{flex:1;min-width:210px}
-input{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;color:var(--ink);font:inherit}
-button,.btn{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:10px 14px;color:var(--ink);font:inherit;text-decoration:none;cursor:pointer}
-button:hover,.btn:hover{border-color:var(--blue)}.primary{background:#21466c;border-color:#3d76a8}
-main{padding-bottom:36px}.status{color:var(--muted);font-size:.82rem;margin:14px 0 0}
-section{margin:25px 0}.heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px}h2{font-size:1.2rem;margin:0}.sub{font-size:.82rem;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:12px}
-.card{background:linear-gradient(145deg,var(--panel),#111b2b);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;min-height:158px}
-.tag{font-size:.7rem;color:var(--green);letter-spacing:.1em;text-transform:uppercase;font-weight:700}
-.card h3{margin:6px 0;font-size:1.02rem}.card p{color:var(--muted);font-size:.88rem;margin:0 0 14px;flex:1}.card a{color:var(--blue);font-weight:700;text-decoration:none}.card a:hover{text-decoration:underline}
-.two{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}@media(max-width:720px){.two{grid-template-columns:1fr}}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:17px}
-ol{padding-left:21px;margin:10px 0 0}li{margin:8px 0;color:var(--muted)}li b{color:var(--ink)}
-.callout{border-left:3px solid var(--green);background:#102b2a;padding:14px;border-radius:9px;color:#dff8ef}
-.hidden{display:none!important}footer{padding-bottom:30px;color:var(--muted);font-size:.8rem}
-</style></head>
+:root{
+  --navy:#101d32;--navy2:#172943;--ink:#172338;--muted:#66758b;--paper:#f5f7fa;
+  --white:#fff;--line:#dce3eb;--red:#a8323b;--gold:#b58b4b;--blue:#315d89;
+  --shadow:0 14px 38px rgba(16,29,50,.09);--radius:18px;--max:1220px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+a{color:inherit}
+button,input,select{font:inherit}
+.skip{position:absolute;left:-9999px;top:0;background:#fff;padding:10px;z-index:9}
+.skip:focus{left:10px}
+.topline{height:5px;background:linear-gradient(90deg,var(--red) 0 18%,#fff 18% 82%,var(--blue) 82%)}
+.masthead{background:var(--navy);color:#fff}
+.mast-inner{max-width:var(--max);margin:auto;padding:22px 26px 18px}
+.utility{display:flex;justify-content:space-between;align-items:center;gap:14px;color:#c8d2df;font-size:.78rem;letter-spacing:.11em;text-transform:uppercase}
+.brand{display:flex;align-items:center;gap:14px;margin:17px 0 12px}
+.brand-mark{width:43px;height:43px;border:1px solid #9aa9bc;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:Georgia,serif;font-size:21px}
+.brand h1{font:600 clamp(1.8rem,4vw,2.7rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:.015em;margin:0}
+.brand p{margin:6px 0 0;color:#c8d2df;font-size:.9rem;letter-spacing:.04em}
+.nav{display:flex;gap:7px;flex-wrap:wrap;border-top:1px solid #34445b;padding-top:13px}
+.nav a{padding:8px 13px;text-decoration:none;color:#e5ebf2;border-radius:7px;font-size:.9rem}
+.nav a:hover,.nav a:focus-visible{background:#263b58;outline:none}
+.hero{background:linear-gradient(110deg,#eaf0f6,#f8f9fb 68%);border-bottom:1px solid var(--line)}
+.hero-inner{max-width:var(--max);margin:auto;padding:38px 26px 34px;display:grid;grid-template-columns:1.5fr .8fr;gap:30px;align-items:center}
+.kicker{color:var(--red);font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.hero h2{font:600 clamp(2rem,4vw,3.35rem)/1.08 Georgia,"Times New Roman",serif;margin:10px 0 13px;color:var(--navy);max-width:760px}
+.hero p{color:#53647a;max-width:720px;margin:0}
+.hero-side{background:#fff;border:1px solid var(--line);border-left:4px solid var(--red);padding:19px 21px;border-radius:12px;box-shadow:var(--shadow)}
+.hero-side strong{display:block;color:var(--navy);font:600 1.1rem Georgia,serif;margin-bottom:6px}
+.hero-side span{font-size:.9rem;color:var(--muted)}
+main{max-width:var(--max);margin:auto;padding:28px 26px 64px}
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:24px}
+.search{flex:1 1 240px;position:relative}
+.search input{width:100%;border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 14px;color:var(--ink);outline:none}
+.search input:focus{border-color:var(--blue);box-shadow:0 0 0 3px #315d8918}
+.control{border:1px solid var(--line);background:#fff;color:var(--navy);padding:11px 14px;border-radius:10px;text-decoration:none;cursor:pointer}
+.control:hover{border-color:#9baabd;background:#fdfefe}
+.date-label{font-size:.84rem;color:var(--muted);margin-left:auto}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:34px 0 16px}
+.section-head h2{font:600 clamp(1.5rem,3vw,2rem)/1.15 Georgia,serif;color:var(--navy);margin:0}
+.section-head p{margin:5px 0 0;color:var(--muted);font-size:.9rem}
+.section-tag{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);font-weight:800}
+.feature-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}
+.feature{background:var(--navy);color:#fff;border-radius:var(--radius);padding:26px;min-height:250px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.feature:after{content:"";position:absolute;width:230px;height:230px;border:1px solid #ffffff18;border-radius:50%;right:-80px;bottom:-115px;box-shadow:0 0 0 24px #ffffff08,0 0 0 48px #ffffff05}
+.feature .section-tag{color:#e4c58f}
+.feature h3{font:600 clamp(1.55rem,3vw,2.15rem)/1.18 Georgia,serif;max-width:620px;margin:14px 0 10px}
+.feature p{color:#d1dbe7;max-width:610px;margin:0 0 20px}
+.feature a{color:#fff;text-decoration:none;border-bottom:1px solid #d9c49f;padding-bottom:3px;font-weight:700}
+.feature-small{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:var(--shadow)}
+.feature-small h3{font:600 1.4rem/1.2 Georgia,serif;color:var(--navy);margin:12px 0 8px}
+.feature-small p{color:var(--muted);margin:0 0 16px;font-size:.93rem}
+.text-link{color:var(--blue);font-weight:750;text-decoration:none}
+.text-link:hover{text-decoration:underline}
+.topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.topic{background:#fff;border:1px solid var(--line);border-radius:14px;padding:19px;min-height:174px;display:flex;flex-direction:column;box-shadow:0 5px 18px rgba(16,29,50,.035);transition:transform .18s,border-color .18s}
+.topic:hover{transform:translateY(-2px);border-color:#aebdce}
+.topic .num{color:var(--red);font:700 .75rem Georgia,serif;letter-spacing:.12em}
+.topic h3{font:600 1.2rem/1.22 Georgia,serif;color:var(--navy);margin:9px 0 7px}
+.topic p{font-size:.9rem;color:var(--muted);margin:0 0 15px}
+.topic a{margin-top:auto;color:var(--blue);font-size:.9rem;font-weight:750;text-decoration:none}
+.topic a:hover{text-decoration:underline}
+.source-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.source{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none}
+.source strong{display:block;color:var(--navy);font:600 1.05rem Georgia,serif}
+.source span{font-size:.82rem;color:var(--muted)}
+.source:hover{border-color:#9baabd;box-shadow:var(--shadow)}
+.guide{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.guide article{padding:17px;border-radius:12px;background:#edf1f6;border:1px solid #e0e6ed}
+.guide b{display:block;color:var(--navy);margin-bottom:5px}
+.guide p{margin:0;color:#596a80;font-size:.9rem}
+.notice{margin-top:25px;padding:17px 19px;border-left:4px solid var(--gold);background:#fff;border-radius:8px;color:#596a80;font-size:.88rem}
+.footer{background:var(--navy);color:#d0d9e4}
+.footer-inner{max-width:var(--max);margin:auto;padding:27px 26px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer strong{font:600 1.1rem Georgia,serif;color:#fff}
+.footer p{margin:5px 0 0;font-size:.83rem;color:#b9c5d3}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.footer a{color:#e6edf5;font-size:.85rem;text-decoration:none}
+.footer a:hover{text-decoration:underline}
+.empty{display:none;padding:20px;text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:12px}
+@media(max-width:850px){.hero-inner{grid-template-columns:1fr}.topic-grid{grid-template-columns:repeat(2,1fr)}.source-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){
+ .mast-inner{padding:17px 17px 13px}.utility{font-size:.66rem}.brand{gap:10px}.brand-mark{width:37px;height:37px}
+ .brand p{font-size:.8rem}.nav{gap:3px}.nav a{padding:7px 9px;font-size:.82rem}
+ .hero-inner{padding:29px 18px}.hero-side{padding:16px}
+ main{padding:20px 16px 45px}.toolbar{gap:8px}.date-label{width:100%;margin:0}
+ .section-head{align-items:start;flex-direction:column;margin-top:29px}
+ .feature-grid{grid-template-columns:1fr}.feature{min-height:230px;padding:22px}
+ .topic-grid{grid-template-columns:1fr}.topic{min-height:150px}.source-grid{grid-template-columns:1fr 1fr}
+ .guide{grid-template-columns:1fr}.footer-inner{padding:24px 18px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
 <body>
-<header>
-<div class="eyebrow">Your morning & evening briefing</div>
-<h1>Daily World Brief</h1>
-<p class="intro">A simple, shareable news desk for your WhatsApp group. Browse fresh coverage on India, world affairs, conflicts, diplomacy, defence and the global economy — then discuss what matters over a cup of tea.</p>
-<div class="bar"><input id="search" type="search" placeholder="Search topics…"><button class="primary" id="refresh">↻ Refresh dashboard</button><a class="btn" href="https://news.google.com/home?hl=en-IN&gl=IN&ceid=IN:en" target="_blank" rel="noopener">All latest headlines ↗</a><select id="language" aria-label="Choose translation language" style="background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:10px;color:var(--ink);font:inherit"><option value="hi">Translate to Hindi</option><option value="bn">Translate to Bengali</option><option value="ur">Translate to Urdu</option><option value="pa">Translate to Punjabi</option><option value="mr">Translate to Marathi</option><option value="ta">Translate to Tamil</option></select><button id="translate">Translate page ↗</button></div>
-<p class="status" id="stamp">Dashboard opened just now. News links load the latest available coverage when you open them.</p><p class="status">Default language: English. Choose a language and select “Translate page” to translate the dashboard.</p>
+<a class="skip" href="#main">Skip to content</a>
+<div class="topline"></div>
+<header class="masthead">
+ <div class="mast-inner">
+  <div class="utility"><span>Independent briefing · India and the world</span><span id="today">Daily edition</span></div>
+  <div class="brand">
+   <div class="brand-mark" aria-hidden="true">D</div>
+   <div><h1>Daily World Brief</h1><p>Clarity on the developments shaping our world</p></div>
+  </div>
+  <nav class="nav" aria-label="Main navigation">
+   <a href="#india">India</a><a href="#world">World</a><a href="#trending">Trending topics</a><a href="#sources">Trusted sources</a><a href="#analysis">How to assess</a>
+  </nav>
+ </div>
 </header>
-<main>
-<section><div class="heading"><h2>Today's news by topic</h2><span class="sub">Select a topic to see current headlines</span></div><div class="grid" id="topics">
-<article class="card" data-key="india national politics parliament government"><span class="tag">India</span><h3>India: National Affairs</h3><p>Government decisions, Parliament, elections, courts, policies and major national developments.</p><a href="https://news.google.com/search?q=India%20national%20news&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read latest India news ↗</a></article>
-<article class="card" data-key="world international diplomacy relations summit"><span class="tag">World</span><h3>International Affairs</h3><p>Diplomacy, global summits, alliances, sanctions and relations between major powers.</p><a href="https://news.google.com/search?q=international%20relations%20geopolitics&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read world updates ↗</a></article>
-<article class="card" data-key="war conflict ukraine middle east security"><span class="tag">Conflict & security</span><h3>Wars and Conflict Zones</h3><p>Major conflicts, ceasefire efforts, humanitarian developments and regional security.</p><a href="https://news.google.com/search?q=global%20conflicts%20war%20updates&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read conflict updates ↗</a></article>
-<article class="card" data-key="defence military army navy air force weapons exercise"><span class="tag">Defence</span><h3>Defence & Strategic Affairs</h3><p>Military exercises, defence agreements, weapons, maritime security and strategic partnerships.</p><a href="https://news.google.com/search?q=defence%20strategic%20affairs&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read defence news ↗</a></article>
-<article class="card" data-key="economy trade oil energy food prices markets"><span class="tag">Economy</span><h3>Global Economy & Trade</h3><p>Oil and gas, trade disputes, tariffs, inflation, food security and supply chains.</p><a href="https://news.google.com/search?q=global%20economy%20trade%20energy&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read economy updates ↗</a></article>
-<article class="card" data-key="india foreign policy usa russia china neighbours"><span class="tag">India + World</span><h3>India's Foreign Relations</h3><p>India's ties with the US, Russia, China, Europe and neighbouring countries.</p><a href="https://news.google.com/search?q=India%20foreign%20policy%20diplomacy&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read diplomatic updates ↗</a></article>
-<article class="card" data-key="science technology cyber ai space"><span class="tag">Technology</span><h3>Technology & Cybersecurity</h3><p>AI, cyber threats, space policy, semiconductors and technology competition.</p><a href="https://news.google.com/search?q=technology%20cybersecurity%20geopolitics&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read technology news ↗</a></article>
-<article class="card" data-key="climate environment disaster water"><span class="tag">Environment</span><h3>Climate & Global Challenges</h3><p>Climate diplomacy, disasters, water disputes, energy transition and environmental security.</p><a href="https://news.google.com/search?q=climate%20change%20international%20news&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read climate updates ↗</a></article>
-</div></section>
-<section><div class="heading"><h2>Trusted sources</h2><span class="sub">Compare coverage before sharing a claim</span></div><div class="grid">
-<article class="card"><span class="tag">Global news agency</span><h3>Reuters</h3><p>Breaking international news, markets and conflict reporting.</p><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Open Reuters ↗</a></article>
-<article class="card"><span class="tag">Public broadcaster</span><h3>BBC News</h3><p>International reporting, explainers and regional coverage.</p><a href="https://www.bbc.com/news" target="_blank" rel="noopener">Open BBC ↗</a></article>
-<article class="card"><span class="tag">Indian newspaper</span><h3>The Hindu</h3><p>Indian politics, editorials, national affairs and analysis.</p><a href="https://www.thehindu.com/" target="_blank" rel="noopener">Open The Hindu ↗</a></article>
-<article class="card"><span class="tag">Indian public information</span><h3>Press Information Bureau</h3><p>Official government releases. Verify important claims independently.</p><a href="https://pib.gov.in/" target="_blank" rel="noopener">Open PIB ↗</a></article>
-<article class="card"><span class="tag">Strategic analysis</span><h3>Observer Research Foundation</h3><p>Indian and international policy analysis and expert commentary.</p><a href="https://www.orfonline.org/" target="_blank" rel="noopener">Open ORF ↗</a></article>
-<article class="card"><span class="tag">International analysis</span><h3>Council on Foreign Relations</h3><p>Backgrounders and analysis on international relations and security.</p><a href="https://www.cfr.org/" target="_blank" rel="noopener">Open CFR ↗</a></article>
-</div></section>
-<section class="two"><div class="panel"><h2>Understand any news in 5 minutes</h2><ol><li><b>What happened?</b> State the confirmed event in two lines.</li><li><b>Who is involved?</b> Identify countries, leaders and organisations.</li><li><b>Why did it happen?</b> Look for background, interests and triggers.</li><li><b>Why does it matter?</b> Explain the impact on India and the world.</li><li><b>What could happen next?</b> Note possible outcomes and uncertainties.</li></ol></div><div class="panel"><h2>For the WhatsApp group</h2><p style="color:var(--muted)">A quick daily routine:</p><ol><li>Open the dashboard with morning tea.</li><li>Choose one India story and one world story.</li><li>Read at least two reports on major claims.</li><li>Post one short summary and one discussion question.</li></ol></div></section>
-<div class="callout"><b>How updates work:</b> Topic links open live Google News results, so newly published coverage appears when readers open them. The dashboard itself is a static webpage; its refresh button reloads the page, not a private live-news database. No newspaper PDFs are copied or redistributed.</div>
+<section class="hero">
+ <div class="hero-inner">
+  <div><div class="kicker">Your daily briefing desk</div><h2>Understand the story. See the bigger picture.</h2>
+   <p>A focused starting point for important developments in India and across the world. Explore current coverage, compare reporting, and follow the issues that matter.</p>
+  </div>
+  <aside class="hero-side"><strong>Read beyond the headline</strong><span>Check the date, compare independent reporting, and separate confirmed facts from claims or analysis.</span></aside>
+ </div>
+</section>
+<main id="main">
+ <div class="toolbar">
+  <div class="search"><input id="search" type="search" placeholder="Search a topic — e.g. Parliament, trade, climate…" aria-label="Search dashboard topics"></div>
+  <button class="control" id="clear" type="button">Clear search</button>
+  <a class="control" href="https://news.google.com/" target="_blank" rel="noopener">Latest news ↗</a>
+  <span class="date-label" id="updated">Briefing desk</span>
+ </div>
+
+ <div class="section-head" id="india"><div><div class="section-tag">01 · India first</div><h2>India — national developments</h2><p>Government, Parliament, economy, society, science and states.</p></div></div>
+ <div class="feature-grid">
+  <article class="feature">
+   <div class="section-tag">India briefing</div><h3>What is changing across India?</h3>
+   <p>Follow policy decisions, public institutions, elections, courts, infrastructure, business and major national developments.</p>
+   <a href="https://news.google.com/search?q=India%20latest%20news%20government%20policy%20Parliament&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Explore current India coverage ↗</a>
+  </article>
+  <article class="feature-small">
+   <div><div class="section-tag">Official updates</div><h3>Go to primary sources</h3><p>For announcements and policy documents, check the original government release rather than relying only on a social-media post.</p></div>
+   <a class="text-link" href="https://pib.gov.in/" target="_blank" rel="noopener">Press Information Bureau ↗</a>
+  </article>
+ </div>
+
+ <div class="section-head" id="world"><div><div class="section-tag">02 · International</div><h2>World — global affairs</h2><p>Diplomacy, conflicts, elections, security, trade and international institutions.</p></div></div>
+ <div class="feature-grid">
+  <article class="feature">
+   <div class="section-tag">World briefing</div><h3>The developments shaping international affairs</h3>
+   <p>Track major-power relations, regional crises, negotiations, global institutions and events with consequences beyond one country.</p>
+   <a href="https://news.google.com/search?q=world%20news%20geopolitics%20diplomacy%20conflict&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Explore current world coverage ↗</a>
+  </article>
+  <article class="feature-small">
+   <div><div class="section-tag">Foreign policy</div><h3>India on the world stage</h3><p>Follow India's relations with neighbouring countries, major powers and multilateral organisations.</p></div>
+   <a class="text-link" href="https://www.mea.gov.in/press-releases.htm" target="_blank" rel="noopener">Ministry of External Affairs ↗</a>
+  </article>
+ </div>
+
+ <div class="section-head" id="trending"><div><div class="section-tag">03 · Follow the issue</div><h2>Trending topics & specialist desks</h2><p>Topic links open current coverage. Compare more than one report before treating a claim as confirmed.</p></div></div>
+ <div class="topic-grid" id="topics">
+  <article class="topic" data-search="parliament government policy elections courts india national affairs"><span class="num">DESK 01</span><h3>Politics & public policy</h3><p>Parliament, government decisions, elections, courts and public administration.</p><a href="https://news.google.com/search?q=India%20Parliament%20government%20policy%20elections&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read latest coverage ↗</a></article>
+  <article class="topic" data-search="economy business inflation jobs budget trade india world"><span class="num">DESK 02</span><h3>Economy, business & trade</h3><p>Growth, inflation, jobs, markets, budgets, energy and trade relations.</p><a href="https://news.google.com/search?q=India%20global%20economy%20trade%20latest&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read latest coverage ↗</a></article>
+  <article class="topic" data-search="diplomacy foreign relations summits sanctions alliances"><span class="num">DESK 03</span><h3>Diplomacy & foreign relations</h3><p>Summits, bilateral ties, alliances, sanctions and negotiations.</p><a href="https://news.google.com/search?q=global%20diplomacy%20foreign%20relations%20latest&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read latest coverage ↗</a></article>
+  <article class="topic" data-search="war conflict ceasefire humanitarian security"><span class="num">DESK 04</span><h3>Wars, conflicts & security</h3><p>Conflict developments, ceasefire efforts, humanitarian conditions and regional security.</p><a href="https://news.google.com/search?q=world%20conflicts%20ceasefire%20security%20latest&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read latest coverage ↗</a></article>
+  <article class="topic" data-search="defence military armed forces maritime strategic security"><span class="num">DESK 05</span><h3>Defence & strategic affairs</h3><p>Military policy, exercises, procurement, maritime security and strategic partnerships.</p><a href="https://news.google.com/search?q=India%20defence%20strategic%20affairs%20latest&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read latest coverage ↗</a></article>
+  <article class="topic" data-search="science technology artificial intelligence cybersecurity space"><span class="num">DESK 06</span><h3>Technology, AI & cyber</h3><p>Artificial intelligence, cybersecurity, space, semiconductors and digital policy.</p><a href="https://news.google.com/search?q=technology%20AI%20cybersecurity%20India%20world%20latest&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read latest coverage ↗</a></article>
+  <article class="topic" data-search="climate environment disasters energy water"><span class="num">DESK 07</span><h3>Climate & environment</h3><p>Climate negotiations, extreme weather, energy transition, water and conservation.</p><a href="https://news.google.com/search?q=climate%20environment%20global%20latest%20news&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read latest coverage ↗</a></article>
+  <article class="topic" data-search="south asia neighbours china pakistan bangladesh nepal indian ocean"><span class="num">DESK 08</span><h3>South Asia & neighbourhood</h3><p>Developments across India's neighbourhood and the wider Indo-Pacific.</p><a href="https://news.google.com/search?q=South%20Asia%20regional%20news%20India%20neighbours&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read latest coverage ↗</a></article>
+  <article class="topic" data-search="international organisations united nations global health human rights"><span class="num">DESK 09</span><h3>Global institutions</h3><p>United Nations, G20, BRICS, WTO and other international organisations.</p><a href="https://news.google.com/search?q=United%20Nations%20G20%20BRICS%20WTO%20latest&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read latest coverage ↗</a></article>
+ </div>
+ <div class="empty" id="empty">No matching topic found. Try a broader search.</div>
+
+ <div class="section-head" id="sources"><div><div class="section-tag">Source desk</div><h2>Global news outlets & trusted sources</h2><p>Scroll through this directory to open major Indian and international newsrooms, broadcasters and primary-source desks.</p></div></div>
+ <div class="source-grid">
+  <a class="source" href="https://www.reuters.com/world/" target="_blank" rel="noopener"><strong>Reuters</strong><span>International reporting</span></a>
+  <a class="source" href="https://www.aljazeera.com/" target="_blank" rel="noopener"><strong>Al Jazeera</strong><span>Global and regional coverage</span></a>
+  <a class="source" href="https://www.bbc.com/news" target="_blank" rel="noopener"><strong>BBC News</strong><span>World and regional coverage</span></a>
+  <a class="source" href="https://www.firstpost.com/" target="_blank" rel="noopener"><strong>Firstpost</strong><span>India and global news</span></a>
+  <a class="source" href="https://www.thehindu.com/" target="_blank" rel="noopener"><strong>The Hindu</strong><span>India and international news</span></a>
+  <a class="source" href="https://timesofindia.indiatimes.com/" target="_blank" rel="noopener"><strong>The Times of India</strong><span>National and international news</span></a>
+  <a class="source" href="https://apnews.com/world-news" target="_blank" rel="noopener"><strong>Associated Press</strong><span>Independent global reporting</span></a>
+  <a class="source" href="https://www.theguardian.com/world" target="_blank" rel="noopener"><strong>The Guardian</strong><span>World news and analysis</span></a>
+  <a class="source" href="https://www.dw.com/en/top-stories/s-9097" target="_blank" rel="noopener"><strong>DW</strong><span>International news from Germany</span></a>
+  <a class="source" href="https://www.france24.com/en/" target="_blank" rel="noopener"><strong>France 24</strong><span>Global news coverage</span></a>
+  <a class="source" href="https://www.cnn.com/world" target="_blank" rel="noopener"><strong>CNN World</strong><span>International headlines</span></a>
+  <a class="source" href="https://www.bloomberg.com/" target="_blank" rel="noopener"><strong>Bloomberg</strong><span>Business, markets and economy</span></a>
+  <a class="source" href="https://www.ft.com/world" target="_blank" rel="noopener"><strong>Financial Times</strong><span>Global business and geopolitics</span></a>
+  <a class="source" href="https://pib.gov.in/" target="_blank" rel="noopener"><strong>PIB India</strong><span>Official government releases</span></a>
+  <a class="source" href="https://www.mea.gov.in/" target="_blank" rel="noopener"><strong>MEA India</strong><span>Foreign policy statements</span></a>
+  <a class="source" href="https://news.un.org/" target="_blank" rel="noopener"><strong>UN News</strong><span>United Nations coverage</span></a>
+  <a class="source" href="https://www.orfonline.org/" target="_blank" rel="noopener"><strong>ORF</strong><span>Policy research and analysis</span></a>
+ </div>
+
+ <div class="section-head" id="analysis"><div><div class="section-tag">A simple verification habit</div><h2>Before sharing a story</h2><p>A quick checklist for a more accurate discussion.</p></div></div>
+ <div class="guide">
+  <article><b>1. Find the original</b><p>Look for the official statement, document, court order, data release or direct record behind the claim.</p></article>
+  <article><b>2. Compare reporting</b><p>Check whether multiple independent, credible news organisations report the same core facts.</p></article>
+  <article><b>3. Separate fact from claim</b><p>Notice what is confirmed, what is alleged, what is analysis and what remains unknown. Check the publication date.</p></article>
+ </div>
+ <div class="notice"><strong>Editorial note:</strong> Daily World Brief is an independent information dashboard, not a government website or news publisher. Topic links open external coverage and may show different headlines over time. No dashboard can guarantee that every developing report is 100% correct; important claims should be checked against primary records and multiple credible sources. This page contains no advertisements.</div>
 </main>
-<footer>Daily World Brief · Built for easy sharing · External news websites control their own headlines, access and availability.</footer>
+<footer class="footer">
+ <div class="footer-inner"><div><strong>Daily World Brief</strong><p>Independent briefing desk · India and the world</p></div>
+  <div class="footer-links"><a href="#india">India</a><a href="#world">World</a><a href="#sources">Sources</a><a href="#analysis">Verification guide</a></div>
+  <p>© <span id="year"></span> Daily World Brief</p>
+ </div>
+</footer>
 <script>
-const input=document.getElementById('search');
-input.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();document.querySelectorAll('#topics .card').forEach(c=>c.classList.toggle('hidden',!((c.dataset.key+' '+c.innerText).toLowerCase().includes(q))));});
-function stamp(){document.getElementById('stamp').textContent='Dashboard opened: '+new Date().toLocaleString(undefined,{dateStyle:'medium',timeStyle:'short'})+'. News links load current coverage when opened.';}
-document.getElementById('refresh').addEventListener('click',()=>{stamp();input.value='';input.dispatchEvent(new Event('input'));});
-document.getElementById('translate').addEventListener('click',()=>{const lang=document.getElementById('language').value;if(location.protocol==='file:'){alert('Publish this dashboard on GitHub Pages first. Then open its public link and use Translate page.');return;}const target='https://translate.google.com/translate?sl=en&tl='+encodeURIComponent(lang)+'&u='+encodeURIComponent(location.href);window.open(target,'_blank','noopener');});
-stamp();
-</script></body></html>
+const now=new Date();
+document.getElementById('today').textContent=now.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+document.getElementById('updated').textContent='Opened: '+now.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});
+document.getElementById('year').textContent=now.getFullYear();
+const search=document.getElementById('search'), cards=[...document.querySelectorAll('.topic')], empty=document.getElementById('empty');
+function filterTopics(){const q=search.value.trim().toLowerCase();let shown=0;cards.forEach(card=>{const match=(card.innerText+' '+(card.dataset.search||'')).toLowerCase().includes(q);card.style.display=match?'flex':'none';if(match)shown++});empty.style.display=shown?'none':'block'}
+search.addEventListener('input',filterTopics);
+document.getElementById('clear').addEventListener('click',()=>{search.value='';filterTopics();search.focus()});
+</script>
+</body>
+</html>
