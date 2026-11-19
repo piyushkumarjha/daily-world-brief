@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#101d32">
 <meta name="description" content="Daily World Brief — a calm, source-led briefing on India and world affairs.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Daily World Brief | India & World Affairs">
+<meta property="og:description" content="Understand the story. See the bigger picture. India-first news, world affairs and trusted sources.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1446776899648-aa78eefe8ed0?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=80&amp;w=1200">
+<meta name="twitter:card" content="summary_large_image">
 <title>Daily World Brief | India & World Affairs</title>
 <style>
 :root{
@@ -17,12 +22,17 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
 a{color:inherit}
 button,input,select{font:inherit}
+img,iframe,video{max-width:100%}
+:focus-visible{outline:3px solid #b58b4b;outline-offset:3px}
+section[id],div[id]{scroll-margin-top:16px}
 .skip{position:absolute;left:-9999px;top:0;background:#fff;padding:10px;z-index:9}
 .skip:focus{left:10px}
 .topline{height:5px;background:linear-gradient(90deg,var(--red) 0 18%,#fff 18% 82%,var(--blue) 82%)}
 .masthead{background:var(--navy);color:#fff}
 .mast-inner{max-width:var(--max);margin:auto;padding:22px 26px 18px}
-.utility{display:flex;justify-content:space-between;align-items:center;gap:14px;color:#c8d2df;font-size:.78rem;letter-spacing:.11em;text-transform:uppercase}
+.utility{display:flex;justify-content:space-between;align-items:center;gap:14px;color:#c8d2df;font-size:.78rem;letter-spacing:.11em;text-transform:uppercase;flex-wrap:wrap}
+.translate-wrap{display:flex;align-items:center;gap:8px;letter-spacing:normal;text-transform:none;color:#e5ebf2}
+#google_translate_element select{max-width:190px;padding:6px 8px;border:1px solid #66758b;border-radius:7px;background:#fff;color:#172338;font-size:.82rem}
 .brand{display:flex;align-items:center;gap:14px;margin:17px 0 12px}
 .brand-mark{width:43px;height:43px;border:1px solid #9aa9bc;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:Georgia,serif;font-size:21px}
 .brand h1{font:600 clamp(1.8rem,4vw,2.7rem)/1.08 Georgia,"Times New Roman",serif;letter-spacing:.015em;margin:0}
@@ -88,6 +98,59 @@ main{max-width:var(--max);margin:auto;padding:28px 26px 64px}
 .footer a{color:#e6edf5;font-size:.85rem;text-decoration:none}
 .footer a:hover{text-decoration:underline}
 .empty{display:none;padding:20px;text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:12px}
+
+.live-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:12px 0 16px}
+.live-status{font-size:.82rem;color:var(--muted)}
+.live-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.live-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.live-panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 5px 18px rgba(16,29,50,.035);min-width:0}
+.live-panel h3{font:600 1.25rem/1.2 Georgia,serif;color:var(--navy);margin:0}
+.live-panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.live-count{font-size:.72rem;color:var(--muted);background:#edf1f6;border-radius:20px;padding:4px 8px}
+.live-list{display:grid}
+.live-item{padding:12px 0;border-top:1px solid var(--line)}
+.live-item:first-child{border-top:0;padding-top:2px}
+.live-item a{color:var(--navy);font-weight:700;text-decoration:none;line-height:1.35;display:block}
+.live-item a:hover{text-decoration:underline;color:var(--blue)}
+.live-meta{font-size:.76rem;color:var(--muted);margin-top:5px}
+.live-desc{font-size:.86rem;color:#53647a;margin:6px 0 0}
+.live-empty{font-size:.88rem;color:var(--muted);padding:12px 0}
+.live-error{font-size:.84rem;color:#8b3038;background:#fff5f5;padding:10px;border-radius:8px}
+.live-note{margin-top:14px;font-size:.82rem;color:var(--muted)}
+.live-refresh{border:1px solid var(--line);background:#fff;color:var(--navy);padding:9px 12px;border-radius:9px;cursor:pointer}
+.live-refresh:disabled{opacity:.6;cursor:wait}
+@media(max-width:700px){.live-grid{grid-template-columns:1fr}.live-panel{padding:15px}}
+
+/* Editorial photography and source-provided live-news thumbnails. */
+.feature{padding:0;display:flex;flex-direction:column}
+.feature-photo{display:block;width:100%;height:190px;object-fit:cover;background:#24354d}
+.feature-copy{padding:23px 26px 26px;position:relative;z-index:1}
+.photo-caption{display:block;margin-top:8px;color:#c5d1df;font-size:.7rem;letter-spacing:.04em}
+.live-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.live-panel{padding:15px}
+.live-panel-head{align-items:flex-start}
+.live-list{gap:0}
+.live-item{display:grid;grid-template-columns:112px minmax(0,1fr);gap:12px;padding:13px 0}
+.live-item:first-child{padding-top:2px}
+.live-thumb{width:112px;height:82px;border-radius:9px;overflow:hidden;background:linear-gradient(135deg,#dce5ef,#edf1f6);display:grid;place-items:center;flex:0 0 auto}
+.live-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.live-thumb.no-photo{color:#687b92;text-align:center;padding:8px;font-size:.72rem;line-height:1.25}
+.live-story{min-width:0}
+.live-story a{color:var(--navy);font-weight:750;text-decoration:none;line-height:1.35;display:block}
+.live-story a:hover{text-decoration:underline;color:var(--blue)}
+.live-meta{font-size:.72rem;color:var(--muted);margin-top:5px;line-height:1.35}
+.live-desc{font-size:.8rem;color:#53647a;margin:6px 0 0;line-height:1.42}
+.live-photo-note{font-size:.76rem;color:var(--muted);margin:0 0 12px}
+@media(max-width:1050px){.live-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){
+ .feature{padding:0}.feature-photo{height:170px}.feature-copy{padding:19px 20px 22px}
+ .live-grid{grid-template-columns:1fr}
+ .live-item{grid-template-columns:104px minmax(0,1fr);gap:10px}
+ .live-thumb{width:104px;height:78px}.live-desc{font-size:.78rem}
+}
+@media(max-width:380px){.live-item{grid-template-columns:88px minmax(0,1fr);gap:9px}.live-thumb{width:88px;height:72px}}
+
+
 @media(max-width:850px){.hero-inner{grid-template-columns:1fr}.topic-grid{grid-template-columns:repeat(2,1fr)}.source-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){
  .mast-inner{padding:17px 17px 13px}.utility{font-size:.66rem}.brand{gap:10px}.brand-mark{width:37px;height:37px}
@@ -99,7 +162,102 @@ main{max-width:var(--max);margin:auto;padding:28px 26px 64px}
  .topic-grid{grid-template-columns:1fr}.topic{min-height:150px}.source-grid{grid-template-columns:1fr 1fr}
  .guide{grid-template-columns:1fr}.footer-inner{padding:24px 18px}
 }
+
+/* Mobile-first comfort layer: keeps desktop styling intact. */
+.mobile-dock{display:none}
+@media(max-width:700px){
+ html{scroll-padding-top:14px}
+ body{font-size:15px;padding-bottom:76px}
+ .mast-inner{padding:14px 16px 12px}
+ .utility{font-size:.62rem;letter-spacing:.07em;gap:7px}
+ .translate-wrap{width:100%;justify-content:flex-start}
+ #google_translate_element select{max-width:100%;min-height:40px}
+ .brand{margin:13px 0 11px;gap:10px;align-items:center}
+ .brand-mark{width:36px;height:36px;flex:0 0 36px;font-size:18px}
+ .brand h1{font-size:1.75rem}
+ .brand p{font-size:.76rem;line-height:1.35}
+ .nav{display:flex;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;gap:5px;padding:10px 0 2px}
+ .nav::-webkit-scrollbar{display:none}
+ .nav a{white-space:nowrap;flex:0 0 auto;padding:9px 12px;font-size:.82rem;background:#1a2c45}
+ .mobile-dock{position:fixed;z-index:20;left:10px;right:10px;bottom:max(10px,env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:7px;background:rgba(16,29,50,.97);border:1px solid #34445b;border-radius:17px;box-shadow:0 10px 32px rgba(0,0,0,.22);backdrop-filter:blur(12px)}
+ .mobile-dock a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-height:48px;color:#fff;text-decoration:none;border-radius:10px}
+ .mobile-dock a:active,.mobile-dock a:focus-visible{background:#314966;outline:none}
+ .mobile-dock span{font-size:1.12rem;line-height:1.2}
+ .mobile-dock small{font-size:.68rem;letter-spacing:.02em}
+ .hero-inner{padding:25px 17px 22px;gap:16px}
+ .hero h2{font-size:2rem;line-height:1.12}
+ .hero p{font-size:.92rem;line-height:1.55}
+ .hero-side{padding:14px 15px}
+ main{padding:18px 14px 36px}
+ .toolbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px}
+ .search{grid-column:1/-1;width:100%}
+ .search input{min-height:48px;font-size:16px;padding:12px 13px}
+ .control{min-height:44px;text-align:center;padding:10px 9px;font-size:.85rem}
+ .date-label{grid-column:1/-1;margin:0;font-size:.76rem}
+ .section-head{margin:27px 0 13px;gap:5px}
+ .section-head h2{font-size:1.48rem;line-height:1.2}
+ .section-head p{font-size:.84rem;line-height:1.45}
+ .feature-grid,.live-grid{grid-template-columns:1fr;gap:11px}
+ .feature{min-height:0;padding:20px}
+ .feature-small{padding:19px}
+ .topic-grid{grid-template-columns:1fr;gap:10px}
+ .topic{min-height:0;padding:17px}
+ .topic h3{font-size:1.16rem}
+ .topic p{font-size:.87rem;line-height:1.5}
+ .topic a,.feature a,.text-link{display:inline-flex;align-items:center;min-height:40px}
+ .live-toolbar{align-items:stretch}
+ .live-actions{display:grid;grid-template-columns:1fr;width:100%}
+ .live-refresh{min-height:44px;width:100%}
+ .live-panel{padding:14px;border-radius:12px}
+ .live-item{padding:13px 0}
+ .live-item a{font-size:.94rem;line-height:1.4}
+ .live-meta{font-size:.72rem;line-height:1.4}
+ .live-desc{font-size:.82rem;line-height:1.45}
+ .source-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .source{padding:13px 11px;min-width:0;overflow-wrap:anywhere}
+ .source strong{font-size:.93rem;line-height:1.25}
+ .source span{font-size:.74rem;line-height:1.35;display:block;margin-top:4px}
+ .guide{grid-template-columns:1fr;gap:9px}
+ .guide article{padding:15px}
+ .notice{padding:14px;font-size:.82rem;line-height:1.5}
+ .footer-inner{padding:22px 16px;gap:14px}
+ .footer-links{gap:8px 14px}
+}
+@media(max-width:380px){
+ .brand h1{font-size:1.55rem}
+ .hero h2{font-size:1.78rem}
+ .source-grid{grid-template-columns:1fr}
+ .toolbar{grid-template-columns:1fr}
+ .search,.date-label{grid-column:auto}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+/* Android and WhatsApp in-app browser refinements. */
+html{ -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+body{ overflow-x:hidden; }
+button,a,input,select{ touch-action:manipulation; }
+img{ height:auto; }
+.live-thumb img{height:100%}
+@media(max-width:700px){
+  .feature{padding:0;min-height:0}
+  .feature-photo{width:100%;height:clamp(155px,48vw,220px);object-fit:cover}
+  .feature-copy{padding:18px 18px 21px}
+  .toolbar .control{min-height:48px;display:flex;align-items:center;justify-content:center}
+  .live-refresh{min-height:48px;font-weight:650}
+  .live-item{grid-template-columns:minmax(88px,30%) minmax(0,1fr);align-items:start}
+  .live-thumb{width:100%;height:auto;aspect-ratio:4/3;min-height:68px}
+  .live-story a{font-size:.96rem;overflow-wrap:anywhere}
+  .live-desc{overflow-wrap:anywhere}
+  .mobile-dock{padding-bottom:max(7px,env(safe-area-inset-bottom))}
+  .mobile-dock a{min-height:50px}
+  .notice,.guide p,.topic p{overflow-wrap:break-word}
+}
+@media(max-width:380px){
+  .live-item{grid-template-columns:84px minmax(0,1fr)}
+  .live-thumb{width:84px;height:68px;aspect-ratio:auto}
+  .live-story a{font-size:.9rem}
+}
+
 </style>
 </head>
 <body>
@@ -107,16 +265,22 @@ main{max-width:var(--max);margin:auto;padding:28px 26px 64px}
 <div class="topline"></div>
 <header class="masthead">
  <div class="mast-inner">
-  <div class="utility"><span>Independent briefing · India and the world</span><span id="today">Daily edition</span></div>
+  <div class="utility"><span>Independent briefing · India and the world</span><span id="today">Daily edition</span><div class="translate-wrap"><span>Read in:</span><div id="google_translate_element"><span style="font-size:.8rem">Choose language</span></div></div></div>
   <div class="brand">
    <div class="brand-mark" aria-hidden="true">D</div>
    <div><h1>Daily World Brief</h1><p>Clarity on the developments shaping our world</p></div>
   </div>
   <nav class="nav" aria-label="Main navigation">
-   <a href="#india">India</a><a href="#world">World</a><a href="#trending">Trending topics</a><a href="#sources">Trusted sources</a><a href="#analysis">How to assess</a>
+   <a href="#india">India</a><a href="#world">World</a><a href="#live-news">Live news</a><a href="#trending">Trending topics</a><a href="#sources">Trusted sources</a><a href="#analysis">How to assess</a>
   </nav>
  </div>
 </header>
+<nav class="mobile-dock" aria-label="Quick mobile navigation">
+ <a href="#india"><span aria-hidden="true">⌂</span><small>India</small></a>
+ <a href="#world"><span aria-hidden="true">◎</span><small>World</small></a>
+ <a href="#live-news"><span aria-hidden="true">▤</span><small>Live news</small></a>
+ <a href="#sources"><span aria-hidden="true">↗</span><small>Sources</small></a>
+</nav>
 <section class="hero">
  <div class="hero-inner">
   <div><div class="kicker">Your daily briefing desk</div><h2>Understand the story. See the bigger picture.</h2>
@@ -130,15 +294,17 @@ main{max-width:var(--max);margin:auto;padding:28px 26px 64px}
   <div class="search"><input id="search" type="search" placeholder="Search a topic — e.g. Parliament, trade, climate…" aria-label="Search dashboard topics"></div>
   <button class="control" id="clear" type="button">Clear search</button>
   <a class="control" href="https://news.google.com/" target="_blank" rel="noopener">Latest news ↗</a>
+  <button class="control" id="share-dashboard" type="button">Share dashboard ↗</button>
   <span class="date-label" id="updated">Briefing desk</span>
  </div>
 
  <div class="section-head" id="india"><div><div class="section-tag">01 · India first</div><h2>India — national developments</h2><p>Government, Parliament, economy, society, science and states.</p></div></div>
  <div class="feature-grid">
   <article class="feature">
-   <div class="section-tag">India briefing</div><h3>What is changing across India?</h3>
+   <img class="feature-photo" src="https://images.unsplash.com/photo-1760872645554-e163fcf2c338?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=78&amp;w=1200" alt="Government Secretariat buildings in New Delhi" loading="lazy" decoding="async">
+   <div class="feature-copy"><div class="section-tag">India briefing</div><h3>What is changing across India?</h3>
    <p>Follow policy decisions, public institutions, elections, courts, infrastructure, business and major national developments.</p>
-   <a href="https://news.google.com/search?q=India%20latest%20news%20government%20policy%20Parliament&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Explore current India coverage ↗</a>
+   <a href="https://news.google.com/search?q=India%20latest%20news%20government%20policy%20Parliament&amp;hl=en-IN&amp;gl=IN&amp;ceid=IN%3Aen" target="_blank" rel="noopener">Explore current India coverage ↗</a><span class="photo-caption">Illustrative photograph · Unsplash</span></div>
   </article>
   <article class="feature-small">
    <div><div class="section-tag">Official updates</div><h3>Go to primary sources</h3><p>For announcements and policy documents, check the original government release rather than relying only on a social-media post.</p></div>
@@ -149,9 +315,10 @@ main{max-width:var(--max);margin:auto;padding:28px 26px 64px}
  <div class="section-head" id="world"><div><div class="section-tag">02 · International</div><h2>World — global affairs</h2><p>Diplomacy, conflicts, elections, security, trade and international institutions.</p></div></div>
  <div class="feature-grid">
   <article class="feature">
-   <div class="section-tag">World briefing</div><h3>The developments shaping international affairs</h3>
+   <img class="feature-photo" src="https://images.unsplash.com/photo-1446776899648-aa78eefe8ed0?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=78&amp;w=1200" alt="Earth viewed from space" loading="lazy" decoding="async">
+   <div class="feature-copy"><div class="section-tag">World briefing</div><h3>The developments shaping international affairs</h3>
    <p>Track major-power relations, regional crises, negotiations, global institutions and events with consequences beyond one country.</p>
-   <a href="https://news.google.com/search?q=world%20news%20geopolitics%20diplomacy%20conflict&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Explore current world coverage ↗</a>
+   <a href="https://news.google.com/search?q=world%20news%20geopolitics%20diplomacy%20conflict&amp;hl=en-IN&amp;gl=IN&amp;ceid=IN%3Aen" target="_blank" rel="noopener">Explore current world coverage ↗</a><span class="photo-caption">Illustrative photograph · NASA / Unsplash</span></div>
   </article>
   <article class="feature-small">
    <div><div class="section-tag">Foreign policy</div><h3>India on the world stage</h3><p>Follow India's relations with neighbouring countries, major powers and multilateral organisations.</p></div>
@@ -159,7 +326,14 @@ main{max-width:var(--max);margin:auto;padding:28px 26px 64px}
   </article>
  </div>
 
- <div class="section-head" id="trending"><div><div class="section-tag">03 · Follow the issue</div><h2>Trending topics & specialist desks</h2><p>Topic links open current coverage. Compare more than one report before treating a claim as confirmed.</p></div></div>
+ <div class="section-head" id="live-news"><div><div class="section-tag">03 · Updated coverage</div><h2>Latest headlines with photos</h2><p>Recent stories from news feeds, grouped by subject. Article images appear only when supplied by the feed.</p></div></div>
+ <div class="live-toolbar"><span class="live-status" id="feed-status" role="status" aria-live="polite">Preparing news desks…</span><div class="live-actions"><button class="live-refresh" id="refresh-news" type="button">↻ Refresh headlines</button></div></div>
+ <p class="live-photo-note">On Android, use “Share dashboard” to send the page through WhatsApp or another app. Photos are provided by the linked publisher or feed. A neutral placeholder appears when no image is available; illustrative section photos are labelled separately.</p>
+ <div class="live-grid" id="live-grid">
+  <section class="live-panel"><div class="live-empty">Loading India and world headlines…</div></section>
+ </div>
+
+ <div class="section-head" id="trending"><div><div class="section-tag">04 · Follow the issue</div><h2>Trending topics & specialist desks</h2><p>Topic links open current coverage. Compare more than one report before treating a claim as confirmed.</p></div></div>
  <div class="topic-grid" id="topics">
   <article class="topic" data-search="parliament government policy elections courts india national affairs"><span class="num">DESK 01</span><h3>Politics & public policy</h3><p>Parliament, government decisions, elections, courts and public administration.</p><a href="https://news.google.com/search?q=India%20Parliament%20government%20policy%20elections&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read latest coverage ↗</a></article>
   <article class="topic" data-search="economy business inflation jobs budget trade india world"><span class="num">DESK 02</span><h3>Economy, business & trade</h3><p>Growth, inflation, jobs, markets, budgets, energy and trade relations.</p><a href="https://news.google.com/search?q=India%20global%20economy%20trade%20latest&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read latest coverage ↗</a></article>
@@ -209,14 +383,106 @@ main{max-width:var(--max);margin:auto;padding:28px 26px 64px}
  </div>
 </footer>
 <script>
-const now=new Date();
-document.getElementById('today').textContent=now.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
-document.getElementById('updated').textContent='Opened: '+now.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});
-document.getElementById('year').textContent=now.getFullYear();
-const search=document.getElementById('search'), cards=[...document.querySelectorAll('.topic')], empty=document.getElementById('empty');
+function googleTranslateElementInit(){
+  if(window.google&&google.translate){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'hi,bn,ur,pa,mr,ta,te,gu,kn,ml,or,as,es,fr,de,ar,zh-CN,ru',layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},'google_translate_element');}
+}
+function updateClock(){
+ const now=new Date();
+ document.getElementById('today').textContent=now.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+ document.getElementById('updated').textContent='Local time: '+now.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+ document.getElementById('year').textContent=now.getFullYear();
+}
+updateClock();setInterval(updateClock,1000);
+
+const feeds=[
+ {title:'India',query:'India when:2d'},
+ {title:'World',query:'world when:2d'},
+ {title:'Wars & conflicts',query:'(war OR conflict OR ceasefire) when:2d'},
+ {title:'Defence & diplomacy',query:'(defence OR defense OR diplomacy OR military) when:2d'},
+ {title:'Economy & technology',query:'(economy OR trade OR technology OR artificial intelligence) when:2d'},
+ {title:'Climate & environment',query:'(climate OR environment OR extreme weather) when:2d'}
+];
+const feedGrid=document.getElementById('live-grid'),feedStatus=document.getElementById('feed-status'),refreshButton=document.getElementById('refresh-news');
+function esc(v){return String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function plain(v){const el=document.createElement('div');el.innerHTML=v||'';return (el.textContent||'').replace(/\s+/g,' ').trim();}
+function pubTime(v){const d=new Date(v);return v&&!Number.isNaN(d.getTime())?d.toLocaleString('en-IN',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}):'Time unavailable';}
+function rssUrl(q){return 'https://news.google.com/rss/search?q='+encodeURIComponent(q)+'&hl=en-IN&gl=IN&ceid=IN:en';}
+async function loadFeed(feed){
+ const endpoint='https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(rssUrl(feed.query));
+ const res=await fetch(endpoint,{cache:'no-store'});if(!res.ok)throw new Error('Feed unavailable');
+ const data=await res.json();if(data.status!=='ok')throw new Error(data.message||'Feed unavailable');return data.items||[];
+}
+function safeImageUrl(value){
+ if(!value)return '';
+ try{const u=new URL(value);return /^https?:$/.test(u.protocol)?u.href:''}catch(e){return ''}
+}
+function imageFor(item){
+ const candidates=[
+  item.thumbnail,
+  item.enclosure&&(item.enclosure.link||item.enclosure.url),
+  item['media:thumbnail']&&item['media:thumbnail'].url,
+  item.media$thumbnail&&item.media$thumbnail.url,
+  item['media:content']&&item['media:content'].url,
+  item.media$group&&item.media$group['media:content']&&item.media$group['media:content'][0]&&item.media$group['media:content'][0].url
+ ];
+ for(const candidate of candidates){
+  const url=safeImageUrl(typeof candidate==='string'?candidate:(candidate&&candidate.url));
+  if(url)return url;
+ }
+ const markup=[item.content,item.description].filter(Boolean).join(' ');
+ const match=markup.match(/<img\b[^>]*?\bsrc\s*=\s*["']([^"']+)["']/i);
+ return match?safeImageUrl(match[1]):'';
+}
+function panel(feed,items,error){
+ const list=(items||[]).slice(0,6);
+ let body=error?'<div class="live-error">This desk could not load right now. Try refreshing shortly.</div>':
+ list.length?'<div class="live-list">'+list.map(x=>{
+  const url=/^https?:\/\//i.test(x.link||'')?x.link:'#';
+  const desc=plain(x.description).slice(0,180);
+  const title=plain(x.title)||'Untitled report';
+  const image=imageFor(x);
+  const thumb=image
+   ?'<div class="live-thumb"><img src="'+esc(image)+'" alt="'+esc(title)+'" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add(\'no-photo\');this.parentElement.textContent=\'Photo unavailable\'"></div>'
+   :'<div class="live-thumb no-photo" aria-label="No image supplied by source">No source photo</div>';
+  return '<article class="live-item">'+thumb+'<div class="live-story"><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(title)+'</a><div class="live-meta">'+esc(plain(x.author||x.source||'News source'))+' · '+esc(pubTime(x.pubDate))+'</div>'+(desc?'<p class="live-desc">'+esc(desc)+'</p>':'')+'</div></article>';
+ }).join('')+'</div>':'<div class="live-empty">No headlines returned. Try refreshing.</div>';
+ return '<section class="live-panel"><div class="live-panel-head"><h3>'+esc(feed.title)+'</h3><span class="live-count">'+list.length+' headlines</span></div>'+body+'</section>';
+}
+async function refreshNews(){
+ if(refreshButton.disabled)return;refreshButton.disabled=true;feedStatus.textContent='Updating headlines…';
+ const results=await Promise.all(feeds.map(async f=>{try{return {feed:f,items:await loadFeed(f)}}catch(e){return {feed:f,items:[],error:true}}}));
+ feedGrid.innerHTML=results.map(r=>panel(r.feed,r.items,r.error)).join('');
+ const ok=results.filter(r=>!r.error).length,stamp=new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});
+ feedStatus.textContent=ok+' of 6 news desks updated at '+stamp+(ok===6?'':' · Some feeds are temporarily unavailable');
+ refreshButton.disabled=false;
+}
+refreshButton.addEventListener('click',refreshNews);refreshNews();setInterval(refreshNews,15*60*1000);
+
+const shareButton=document.getElementById('share-dashboard');
+if(shareButton){
+ shareButton.addEventListener('click',async()=>{
+  const shareData={title:'Daily World Brief',text:'India-first news, world affairs and trusted sources — Daily World Brief.',url:window.location.href};
+  const original=shareButton.textContent;
+  try{
+   if(navigator.share){await navigator.share(shareData);shareButton.textContent='Share opened ✓';}
+   else if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(window.location.href);shareButton.textContent='Link copied ✓';}
+   else{window.prompt('Copy this dashboard link:',window.location.href);}
+  }catch(err){
+   if(err&&err.name!=='AbortError'){
+    try{await navigator.clipboard.writeText(window.location.href);shareButton.textContent='Link copied ✓';}
+    catch(e){window.prompt('Copy this dashboard link:',window.location.href);}
+   }
+  }
+  window.setTimeout(()=>{shareButton.textContent=original;},2200);
+ });
+}
+
+
+const search=document.getElementById('search'),cards=[...document.querySelectorAll('.topic')],empty=document.getElementById('empty');
 function filterTopics(){const q=search.value.trim().toLowerCase();let shown=0;cards.forEach(card=>{const match=(card.innerText+' '+(card.dataset.search||'')).toLowerCase().includes(q);card.style.display=match?'flex':'none';if(match)shown++});empty.style.display=shown?'none':'block'}
 search.addEventListener('input',filterTopics);
 document.getElementById('clear').addEventListener('click',()=>{search.value='';filterTopics();search.focus()});
 </script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
 </html>
