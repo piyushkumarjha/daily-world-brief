@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>Daily World Brief | Geopolitics Desk</title>
+<style>
+:root{--bg:#0d1422;--panel:#151f31;--panel2:#1b2940;--line:#2b3b55;--ink:#f1f5fb;--muted:#aebbd0;--blue:#8fc7ff;--green:#80e0c2}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#1b3150 0,#0d1422 48%);color:var(--ink);font:16px/1.5 system-ui,Segoe UI,Arial,sans-serif}
+header,main,footer{max-width:1080px;margin:auto;padding-left:20px;padding-right:20px}
+header{padding-top:32px;padding-bottom:22px}.eyebrow{color:var(--green);font-weight:700;text-transform:uppercase;letter-spacing:.15em;font-size:.75rem}
+h1{font-size:clamp(2rem,5vw,3.3rem);line-height:1.05;margin:8px 0}.intro{max-width:720px;color:var(--muted);margin:12px 0}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:18px}.bar input{flex:1;min-width:210px}
+input{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;color:var(--ink);font:inherit}
+button,.btn{display:inline-block;background:var(--panel2);border:1px solid var(--line);border-radius:11px;padding:10px 14px;color:var(--ink);font:inherit;text-decoration:none;cursor:pointer}
+button:hover,.btn:hover{border-color:var(--blue)}.primary{background:#21466c;border-color:#3d76a8}
+main{padding-bottom:36px}.status{color:var(--muted);font-size:.82rem;margin:14px 0 0}
+section{margin:25px 0}.heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px}h2{font-size:1.2rem;margin:0}.sub{font-size:.82rem;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:12px}
+.card{background:linear-gradient(145deg,var(--panel),#111b2b);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;min-height:158px}
+.tag{font-size:.7rem;color:var(--green);letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.card h3{margin:6px 0;font-size:1.02rem}.card p{color:var(--muted);font-size:.88rem;margin:0 0 14px;flex:1}.card a{color:var(--blue);font-weight:700;text-decoration:none}.card a:hover{text-decoration:underline}
+.two{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}@media(max-width:720px){.two{grid-template-columns:1fr}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:17px}
+ol{padding-left:21px;margin:10px 0 0}li{margin:8px 0;color:var(--muted)}li b{color:var(--ink)}
+.callout{border-left:3px solid var(--green);background:#102b2a;padding:14px;border-radius:9px;color:#dff8ef}
+.hidden{display:none!important}footer{padding-bottom:30px;color:var(--muted);font-size:.8rem}
+</style></head>
+<body>
+<header>
+<div class="eyebrow">Your morning & evening briefing</div>
+<h1>Daily World Brief</h1>
+<p class="intro">A simple, shareable news desk for your WhatsApp group. Browse fresh coverage on India, world affairs, conflicts, diplomacy, defence and the global economy — then discuss what matters over a cup of tea.</p>
+<div class="bar"><input id="search" type="search" placeholder="Search topics…"><button class="primary" id="refresh">↻ Refresh dashboard</button><a class="btn" href="https://news.google.com/home?hl=en-IN&gl=IN&ceid=IN:en" target="_blank" rel="noopener">All latest headlines ↗</a><select id="language" aria-label="Choose translation language" style="background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:10px;color:var(--ink);font:inherit"><option value="hi">Translate to Hindi</option><option value="bn">Translate to Bengali</option><option value="ur">Translate to Urdu</option><option value="pa">Translate to Punjabi</option><option value="mr">Translate to Marathi</option><option value="ta">Translate to Tamil</option></select><button id="translate">Translate page ↗</button></div>
+<p class="status" id="stamp">Dashboard opened just now. News links load the latest available coverage when you open them.</p><p class="status">Default language: English. Choose a language and select “Translate page” to translate the dashboard.</p>
+</header>
+<main>
+<section><div class="heading"><h2>Today's news by topic</h2><span class="sub">Select a topic to see current headlines</span></div><div class="grid" id="topics">
+<article class="card" data-key="india national politics parliament government"><span class="tag">India</span><h3>India: National Affairs</h3><p>Government decisions, Parliament, elections, courts, policies and major national developments.</p><a href="https://news.google.com/search?q=India%20national%20news&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read latest India news ↗</a></article>
+<article class="card" data-key="world international diplomacy relations summit"><span class="tag">World</span><h3>International Affairs</h3><p>Diplomacy, global summits, alliances, sanctions and relations between major powers.</p><a href="https://news.google.com/search?q=international%20relations%20geopolitics&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read world updates ↗</a></article>
+<article class="card" data-key="war conflict ukraine middle east security"><span class="tag">Conflict & security</span><h3>Wars and Conflict Zones</h3><p>Major conflicts, ceasefire efforts, humanitarian developments and regional security.</p><a href="https://news.google.com/search?q=global%20conflicts%20war%20updates&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read conflict updates ↗</a></article>
+<article class="card" data-key="defence military army navy air force weapons exercise"><span class="tag">Defence</span><h3>Defence & Strategic Affairs</h3><p>Military exercises, defence agreements, weapons, maritime security and strategic partnerships.</p><a href="https://news.google.com/search?q=defence%20strategic%20affairs&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read defence news ↗</a></article>
+<article class="card" data-key="economy trade oil energy food prices markets"><span class="tag">Economy</span><h3>Global Economy & Trade</h3><p>Oil and gas, trade disputes, tariffs, inflation, food security and supply chains.</p><a href="https://news.google.com/search?q=global%20economy%20trade%20energy&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read economy updates ↗</a></article>
+<article class="card" data-key="india foreign policy usa russia china neighbours"><span class="tag">India + World</span><h3>India's Foreign Relations</h3><p>India's ties with the US, Russia, China, Europe and neighbouring countries.</p><a href="https://news.google.com/search?q=India%20foreign%20policy%20diplomacy&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read diplomatic updates ↗</a></article>
+<article class="card" data-key="science technology cyber ai space"><span class="tag">Technology</span><h3>Technology & Cybersecurity</h3><p>AI, cyber threats, space policy, semiconductors and technology competition.</p><a href="https://news.google.com/search?q=technology%20cybersecurity%20geopolitics&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read technology news ↗</a></article>
+<article class="card" data-key="climate environment disaster water"><span class="tag">Environment</span><h3>Climate & Global Challenges</h3><p>Climate diplomacy, disasters, water disputes, energy transition and environmental security.</p><a href="https://news.google.com/search?q=climate%20change%20international%20news&hl=en-IN&gl=IN&ceid=IN%3Aen" target="_blank" rel="noopener">Read climate updates ↗</a></article>
+</div></section>
+<section><div class="heading"><h2>Trusted sources</h2><span class="sub">Compare coverage before sharing a claim</span></div><div class="grid">
+<article class="card"><span class="tag">Global news agency</span><h3>Reuters</h3><p>Breaking international news, markets and conflict reporting.</p><a href="https://www.reuters.com/world/" target="_blank" rel="noopener">Open Reuters ↗</a></article>
+<article class="card"><span class="tag">Public broadcaster</span><h3>BBC News</h3><p>International reporting, explainers and regional coverage.</p><a href="https://www.bbc.com/news" target="_blank" rel="noopener">Open BBC ↗</a></article>
+<article class="card"><span class="tag">Indian newspaper</span><h3>The Hindu</h3><p>Indian politics, editorials, national affairs and analysis.</p><a href="https://www.thehindu.com/" target="_blank" rel="noopener">Open The Hindu ↗</a></article>
+<article class="card"><span class="tag">Indian public information</span><h3>Press Information Bureau</h3><p>Official government releases. Verify important claims independently.</p><a href="https://pib.gov.in/" target="_blank" rel="noopener">Open PIB ↗</a></article>
+<article class="card"><span class="tag">Strategic analysis</span><h3>Observer Research Foundation</h3><p>Indian and international policy analysis and expert commentary.</p><a href="https://www.orfonline.org/" target="_blank" rel="noopener">Open ORF ↗</a></article>
+<article class="card"><span class="tag">International analysis</span><h3>Council on Foreign Relations</h3><p>Backgrounders and analysis on international relations and security.</p><a href="https://www.cfr.org/" target="_blank" rel="noopener">Open CFR ↗</a></article>
+</div></section>
+<section class="two"><div class="panel"><h2>Understand any news in 5 minutes</h2><ol><li><b>What happened?</b> State the confirmed event in two lines.</li><li><b>Who is involved?</b> Identify countries, leaders and organisations.</li><li><b>Why did it happen?</b> Look for background, interests and triggers.</li><li><b>Why does it matter?</b> Explain the impact on India and the world.</li><li><b>What could happen next?</b> Note possible outcomes and uncertainties.</li></ol></div><div class="panel"><h2>For the WhatsApp group</h2><p style="color:var(--muted)">A quick daily routine:</p><ol><li>Open the dashboard with morning tea.</li><li>Choose one India story and one world story.</li><li>Read at least two reports on major claims.</li><li>Post one short summary and one discussion question.</li></ol></div></section>
+<div class="callout"><b>How updates work:</b> Topic links open live Google News results, so newly published coverage appears when readers open them. The dashboard itself is a static webpage; its refresh button reloads the page, not a private live-news database. No newspaper PDFs are copied or redistributed.</div>
+</main>
+<footer>Daily World Brief · Built for easy sharing · External news websites control their own headlines, access and availability.</footer>
+<script>
+const input=document.getElementById('search');
+input.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();document.querySelectorAll('#topics .card').forEach(c=>c.classList.toggle('hidden',!((c.dataset.key+' '+c.innerText).toLowerCase().includes(q))));});
+function stamp(){document.getElementById('stamp').textContent='Dashboard opened: '+new Date().toLocaleString(undefined,{dateStyle:'medium',timeStyle:'short'})+'. News links load current coverage when opened.';}
+document.getElementById('refresh').addEventListener('click',()=>{stamp();input.value='';input.dispatchEvent(new Event('input'));});
+document.getElementById('translate').addEventListener('click',()=>{const lang=document.getElementById('language').value;if(location.protocol==='file:'){alert('Publish this dashboard on GitHub Pages first. Then open its public link and use Translate page.');return;}const target='https://translate.google.com/translate?sl=en&tl='+encodeURIComponent(lang)+'&u='+encodeURIComponent(location.href);window.open(target,'_blank','noopener');});
+stamp();
+</script></body></html>
